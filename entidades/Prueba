@@ -1,0 +1,121 @@
+{
+  "name": "Quiz",
+  "type": "object",
+  "properties": {
+    "lesson_id": {
+      "type": "string",
+      "description": "ID de la lecci\u00f3n asociada"
+    },
+    "module_id": {
+      "type": "string",
+      "description": "ID del m\u00f3dulo (para quizzes de m\u00f3dulo)"
+    },
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo del quiz"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "lesson_quiz",
+        "module_exam",
+        "practice",
+        "diagnostic",
+        "final_exam"
+      ],
+      "description": "Tipo de quiz"
+    },
+    "questions": {
+      "type": "array",
+      "description": "Preguntas del quiz",
+      "items": {
+        "type": "object",
+        "properties": {
+          "question": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "multiple_choice",
+              "true_false",
+              "matching",
+              "fill_blank",
+              "essay",
+              "case_study",
+              "ordering",
+              "multiple_select"
+            ]
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "correct_answer": {
+            "type": "string"
+          },
+          "correct_answers": {
+            "type": "array",
+            "description": "Para multiple_select",
+            "items": {
+              "type": "string"
+            }
+          },
+          "explanation": {
+            "type": "string"
+          },
+          "difficulty": {
+            "type": "string",
+            "enum": [
+              "easy",
+              "medium",
+              "hard"
+            ]
+          },
+          "points": {
+            "type": "number",
+            "description": "Puntos que vale la pregunta"
+          },
+          "case_scenario": {
+            "type": "string",
+            "description": "Escenario para case_study"
+          }
+        }
+      }
+    },
+    "passing_score": {
+      "type": "number",
+      "description": "Porcentaje para aprobar"
+    },
+    "time_limit_minutes": {
+      "type": "number",
+      "description": "L\u00edmite de tiempo en minutos"
+    },
+    "xp_reward": {
+      "type": "number",
+      "description": "XP por aprobar"
+    },
+    "attempts_allowed": {
+      "type": "number",
+      "description": "N\u00famero de intentos permitidos",
+      "default": 3
+    },
+    "randomize_questions": {
+      "type": "boolean",
+      "description": "Aleatorizar orden de preguntas",
+      "default": false
+    },
+    "show_feedback_immediately": {
+      "type": "boolean",
+      "description": "Mostrar retroalimentaci\u00f3n inmediata",
+      "default": true
+    }
+  },
+  "required": [
+    "title",
+    "type",
+    "questions"
+  ]
+}

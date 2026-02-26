@@ -1,0 +1,42 @@
+{
+  "name": "Semester",
+  "type": "object",
+  "properties": {
+    "number": {
+      "type": "number",
+      "description": "N\u00famero del semestre (1-8)"
+    },
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo del semestre"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del semestre"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji o icono del semestre"
+    },
+    "color": {
+      "type": "string",
+      "description": "Color tem\u00e1tico del semestre"
+    },
+    "required_xp": {
+      "type": "number",
+      "description": "XP necesario para desbloquear"
+    },
+    "modules": {
+      "type": "array",
+      "description": "Lista de IDs de m\u00f3dulos",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "number",
+    "title",
+    "description"
+  ]
+}

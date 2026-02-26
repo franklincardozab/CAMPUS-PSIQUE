@@ -1,0 +1,41 @@
+ {
+
+ "name": "ChatHistory",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario"
+    },
+    "messages": {
+      "type": "array",
+      "description": "Historial de mensajes",
+      "items": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "enum": [
+              "user",
+              "assistant"
+            ]
+          },
+          "content": {
+            "type": "string"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "context_module": {
+      "type": "string",
+      "description": "M\u00f3dulo de contexto actual"
+    }
+  },
+  "required": [
+    "user_email"
+  ]
+}

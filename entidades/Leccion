@@ -1,0 +1,154 @@
+{
+  "name": "Lesson",
+  "type": "object",
+  "properties": {
+    "module_id": {
+      "type": "string",
+      "description": "ID del m\u00f3dulo al que pertenece"
+    },
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo de la lecci\u00f3n"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "theory",
+        "video",
+        "interactive",
+        "case_study",
+        "simulation",
+        "debate"
+      ],
+      "description": "Tipo de lecci\u00f3n"
+    },
+    "content": {
+      "type": "string",
+      "description": "Contenido de la lecci\u00f3n en markdown"
+    },
+    "video_url": {
+      "type": "string",
+      "description": "URL del video si aplica"
+    },
+    "order": {
+      "type": "number",
+      "description": "Orden dentro del m\u00f3dulo"
+    },
+    "duration_minutes": {
+      "type": "number",
+      "description": "Duraci\u00f3n estimada en minutos"
+    },
+    "xp_reward": {
+      "type": "number",
+      "description": "XP que otorga completar la lecci\u00f3n"
+    },
+    "key_concepts": {
+      "type": "array",
+      "description": "Conceptos clave",
+      "items": {
+        "type": "string"
+      }
+    },
+    "glossary": {
+      "type": "array",
+      "description": "Glosario de t\u00e9rminos t\u00e9cnicos",
+      "items": {
+        "type": "object",
+        "properties": {
+          "term": {
+            "type": "string"
+          },
+          "definition": {
+            "type": "string"
+          },
+          "example": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "attention_checks": {
+      "type": "array",
+      "description": "Evaluaciones de atenci\u00f3n durante la lecci\u00f3n",
+      "items": {
+        "type": "object",
+        "properties": {
+          "position": {
+            "type": "number",
+            "description": "Posici\u00f3n en porcentaje (0-100) donde aparece"
+          },
+          "question": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "multiple_choice",
+              "true_false",
+              "reflection"
+            ]
+          },
+          "options": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "correct_answer": {
+            "type": "string"
+          },
+          "feedback": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "interactive_elements": {
+      "type": "array",
+      "description": "Elementos interactivos",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "poll",
+              "reflection",
+              "activity",
+              "case_analysis"
+            ]
+          },
+          "prompt": {
+            "type": "string"
+          },
+          "data": {
+            "type": "object"
+          }
+        }
+      }
+    },
+    "difficulty_level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced",
+        "expert"
+      ],
+      "description": "Nivel de dificultad"
+    },
+    "references": {
+      "type": "array",
+      "description": "Referencias acad\u00e9micas",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "required": [
+    "module_id",
+    "title",
+    "type",
+    "order"
+  ]
+}

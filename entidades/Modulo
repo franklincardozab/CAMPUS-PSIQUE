@@ -1,0 +1,39 @@
+{
+  "name": "Module",
+  "type": "object",
+  "properties": {
+    "semester_id": {
+      "type": "string",
+      "description": "ID del semestre al que pertenece"
+    },
+    "title": {
+      "type": "string",
+      "description": "T\u00edtulo del m\u00f3dulo"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descripci\u00f3n del m\u00f3dulo"
+    },
+    "order": {
+      "type": "number",
+      "description": "Orden dentro del semestre"
+    },
+    "icon": {
+      "type": "string",
+      "description": "Emoji del m\u00f3dulo"
+    },
+    "lessons_count": {
+      "type": "number",
+      "description": "N\u00famero de lecciones"
+    },
+    "xp_reward": {
+      "type": "number",
+      "description": "XP que otorga completar el m\u00f3dulo"
+    }
+  },
+  "required": [
+    "semester_id",
+    "title",
+    "order"
+  ]
+}

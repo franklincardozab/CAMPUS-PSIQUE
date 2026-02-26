@@ -1,0 +1,96 @@
+{
+  "name": "UserProgress",
+  "type": "object",
+  "properties": {
+    "user_email": {
+      "type": "string",
+      "description": "Email del usuario"
+    },
+    "total_xp": {
+      "type": "number",
+      "description": "XP total acumulado"
+    },
+    "current_semester": {
+      "type": "number",
+      "description": "Semestre actual"
+    },
+    "completed_lessons": {
+      "type": "array",
+      "description": "IDs de lecciones completadas",
+      "items": {
+        "type": "string"
+      }
+    },
+    "completed_modules": {
+      "type": "array",
+      "description": "IDs de m\u00f3dulos completados",
+      "items": {
+        "type": "string"
+      }
+    },
+    "completed_semesters": {
+      "type": "array",
+      "description": "N\u00fameros de semestres completados",
+      "items": {
+        "type": "number"
+      }
+    },
+    "badges": {
+      "type": "array",
+      "description": "Badges obtenidos",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "icon": {
+            "type": "string"
+          },
+          "earned_date": {
+            "type": "string",
+            "format": "date"
+          }
+        }
+      }
+    },
+    "streak_days": {
+      "type": "number",
+      "description": "D\u00edas consecutivos de estudio"
+    },
+    "last_study_date": {
+      "type": "string",
+      "format": "date",
+      "description": "\u00daltima fecha de estudio"
+    },
+    "study_time_minutes": {
+      "type": "number",
+      "description": "Tiempo total de estudio en minutos"
+    },
+    "quiz_scores": {
+      "type": "array",
+      "description": "Historial de scores de quizzes",
+      "items": {
+        "type": "object",
+        "properties": {
+          "quiz_id": {
+            "type": "string"
+          },
+          "score": {
+            "type": "number"
+          },
+          "date": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "user_email"
+  ]
+}
